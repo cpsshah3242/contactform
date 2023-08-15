@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+   <style  media="screen">
+    body{
+        background-image: url(./assets/images/bg.png);
+        background-size: contain;
+        background-attachment: fixed;
+        background-repeat: none;
+    }
+form>h1{
+    text-align: center;
+ }
+
+ form{
+   
+     position: absolute;
+   bottom:5%;
+   left: 35%;
+     max-width: 700px;
+     background-color: #9198E5;  /*rgb(157, 135, 235)*/
+     backdrop-filter: blur(10px);
+     margin: auto;
+     padding: 10px;
+     font-size: larger;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+ form>h1{
+    cursor: pointer;
+ }
+ #click{
+    display:none;
+  }
+ #times{
+    position:absolute;
+    right:10px;
+    top: 40px;
+    font-size:25px;
+    background: #dde1e7;
+    padding: 3px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 50%;
+    cursor:pointer;
+    text-decoration: none;
+  }
+  #click:checked~.content{
+    opacity:1;
+    visibility:visible;
+  }
+ input[type="text"],
+ input[type="Email"],
+ input[type="Phone"],
+ input[type="Website"],
+ textarea{
+     padding: 4px;
+     width: 100%; 
+     border: none;
+     border-radius: 5px;
+     outline: none;
+     font-weight: 600;
+     caret-color: #339933;
+ }
+ form>div{
+     margin: 10px;
+ }
+ 
+ .btn{
+     width: 200px;
+     padding: 10px;
+     font-weight: 600;
+     border-radius: 20px;
+    display: block;
+    margin: auto;
+    border: none;
+    background-color: transparent;
+    columns: white;
+    cursor: pointer;
+ 
+ }
+ .btn:hover{
+     background-color: white;
+ }
+
+ .popup{
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+   
+    transform: translate(-50% ,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+ }
+ .open-popup,.close-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50% ,-50%) ;
+ }
+
+ .popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+ }
+ .popup h2{
+   font-size: 38px;
+   font-weight: 500px;
+   margin: 30px 0 10px;
+ }
+ .popup button{
+   width: 100%;
+   margin-top: 50px;
+   padding: 10px 0;
+   background: #6fd649;
+   color: #fff;
+   border: 0;
+   outline: none;
+   font-size: 18px;
+   border-radius: 4px;
+   cursor: pointer;
+   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+ }
+   </style>
+</head>
+<body>
+
+    
+    <form id="myForm" action="https://formsubmit.co/0fbb9fd8ea5761b8c7c547514c3805b7" method="POST">
+        <h1>Contact Us</h1> <a href="index.html" for="click" id="times">x</a>
+        <div> <label for="name">Name:</label><input type="text" id="name" placeholder="Name"></div>
+        <div> <label for="name">Email:</label><input type="Email"  id="Email" placeholder="Email"></div>
+        <div> <label for="name">Number:</label><input type="Phone" id="phone" placeholder="Phone Number"></div>
+        <div> <label for="name">Website:</label><input type="Phone" id="Website" placeholder="Your Website"></div>
+        <div>Message:<textarea name="text" id="Message" cols="30" rows="3" placeholder="Your Message Here"></textarea></div>
+ 
+<button  type="submit"  class="btn" onclick="openPopup()">Submit</button>    
+<div class="popup" id="popup">
+    <img src="./assets/images/tick.jpeg" alt="">
+    <h2>Thank You!</h2>
+    <p>Youe details has been successfully submitted. Thanks!</p>
+    <button type="button" onclick="closePopup()">OK</button>
+</div>
+</form>
+<script >
+    let popup = document.getElementById("popup");
+
+function openPopup(){
+   popup.classList.add("open-popup");
+}
+function closePopup(){
+    popup.classList.remove("close-popup");
+
+}
+</script>
+</body>
+</html>
